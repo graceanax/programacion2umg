@@ -1,0 +1,36 @@
+# Archivos compilados de Java
+*.class
+
+# Carpetas bin en cualquier nivel
+bin/
+**/bin/
+
+# Otras carpetas comunes de compilación
+build/
+**/build/
+out/
+**/out/
+target/
+**/target/
+
+# Archivos basura de macOS
+.DS_Store
+**/.DS_Store
+.AppleDouble
+.LSOverride
+
+# Archivos temporales de macOS
+._*
+.Spotlight-V100
+.Trashes
+
+# Archivos de IDE
+.idea/
+*.iml
+.vscode/
+
+# Archivos temporales
+*.log
+*.tmp
+*.swp
+*~
