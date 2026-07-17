@@ -52,21 +52,29 @@ public class MyDate {
     }
 
     public boolean setMonth(int month) {
+        boolean correcto = false;
+
         if(month >= 1 && month <= 12) {
             this.month = month;
-            return true;
+            correcto=true;
+        } else {
+            System.out.println("Error: El mes "+ month + " no es válido, se agregó uno por defecto");
         }
-        System.out.println("Error: El mes "+ month + " no es válido, se agregó uno por defecto");
-        return false;
+        
+        return correcto;
     }
 
     public boolean setYear(int year) {
+        boolean correcto = false;
+
         if(year >= 1900 && year <= 2100) {
             this.year = year;
-            return true;
+            correcto=true;
+        } else {
+            System.out.println("Error: El año "+ year + " sale del rango, se agregó uno por defecto");
         }
-        System.out.println("Error: El año "+ year + " sale del rango, se agregó uno por defecto");
-        return false;
+        
+        return correcto;
     }
 
 }
