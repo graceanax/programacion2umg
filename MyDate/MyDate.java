@@ -26,27 +26,29 @@ public class MyDate {
     public boolean setDay(int day) {
         boolean correcto = false;
 
-        if(day < 1) {
-            System.out.println("Error: El día "+ day + " es un número negativo, se agregó uno por defecto");
-            return false;
-        } 
-        if (month == 2 && day <= 29) {
-            this.day = day;
-            return true;
+        if (day >= 1) {
+            if (month == 2 && day <= 29) {
+                correcto = true;
+            } else if ((month == 4 || month == 6 || month == 9 || month == 11) && day <= 30) {
+                correcto = true;
+            } else if ((month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12) && day <= 31) {
+                correcto = true;
+            }
         }
 
-        if((month == 4 || month == 6 || month == 9 || month == 11) && day <= 30) {
+        if (correcto) {
             this.day = day;
-            return true;
-        } 
+        } else {
+            this.day = 1;
 
-        if((month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12) && day <= 31) {
-            this.day = day;
-            return true;
-        } 
-        System.out.println("Error: El día "+ day + " es incorrecto para el mes "+ month +", se agregó uno por defecto");
-        return false;
-        
+            if (day < 1) {
+                System.out.println("Error: El día " + day + " es menor que 1, se agregó el día 1 por defecto.");
+            } else {
+                System.out.println("Error: El día " + day + " es incorrecto para el mes " + month + ", se agregó el día 1 por defecto.");
+            }
+        }
+
+        return correcto;
     }
 
     public boolean setMonth(int month) {
