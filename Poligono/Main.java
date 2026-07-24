@@ -13,22 +13,19 @@ Descripcion:
 Muestra en consola el poligono segun el numero de lados
 
 *******************************************************************************/
-
 public class Main {
     public static void main(String[] args) {
-        Poligono p = new Poligono();
+        int lados = 0;
 
-        // prueba 1
-        p.setLados(2);
+        if(args.length > 0) {
+            lados = Integer.parseInt(args[0]);
+            Poligono p = new Poligono();
+            p.setLados(lados);
+        } else {
+            System.out.println("Error: no se ingreso un parametro correcto\n");
+        }
 
-        // prueba 2
-        p.setLados(3);
-
-        // prueba 3
-        p.setLados(7);
-
-        // prueba 4
-        p.setLados(15);
+        
     }
 
 }
