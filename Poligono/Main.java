@@ -26,6 +26,9 @@ public class Main {
 
         // prueba 3
         p.setLados(7);
+
+        // prueba 4
+        p.setLados(15);
     }
 
 }
